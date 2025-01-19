@@ -1,3 +1,4 @@
+import music
 import discord
 import os
 from dotenv import load_dotenv
@@ -16,8 +17,9 @@ def main():
     intents.message_content = True
 
     load_dotenv()
+    TOKEN = os.getenv('DISCORD_TOKEN')
     client = Client(intents=intents)
-    client.run(os.getenv('DISCORD_TOKEN'))
+    client.run(TOKEN)
 
 
 if __name__ == "__main__":
